@@ -1,0 +1,21 @@
+@startuml
+package "Transport Domain" #42b0f5 {
+  class Transport {
+    Transport : Publish()
+    void : Unpublish()
+    Collection<Transport> : searchActiveTransports()
+  }
+
+  Vehicle *- Transport
+  Vehicle -- Details
+  Vehicle -- Images
+  Vehicle -- Address
+}
+
+package "Authentication Domain" #e942f5 {
+  class Account {
+    Account : Login()
+    void : Logout()
+  }
+}
+@enduml
