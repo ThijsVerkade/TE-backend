@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace App\Transport\Domain\Entities;
 
-class Remark
+class Transport
 {
     public function __construct(
         public readonly int $id,
-        public readonly string $description,
-        public readonly string $icon,
     )
     {
     }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Transport\Infrastructure\ValueObjects;
+namespace App\Shared\Domain\ValueObjects;
 
 class DatePeriod
 {

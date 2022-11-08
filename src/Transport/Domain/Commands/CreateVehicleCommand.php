@@ -2,17 +2,18 @@
 
 declare(strict_types=1);
 
-namespace App\Transport\Domain\Aggregates;
+namespace App\Transport\Domain\Commands;
 
+use App\Shared\Domain\ValueObjects\DatePeriod;
+use App\Shared\Domain\ValueObjects\Price;
 use App\Transport\Domain\Entities\Address;
 use App\Transport\Domain\Enums\Status;
 use App\Transport\Domain\Enums\VehicleType;
-use App\Transport\Infrastructure\ValueObjects\DatePeriod;
-use App\Transport\Infrastructure\ValueObjects\Price;
 
-class Vehicle
+class CreateVehicleCommand
 {
     public function __construct(
+        public readonly int $transportId,
         public readonly int $vehicleReferenceId,
         public readonly int $distanceAddress,
         public readonly Status $status,
