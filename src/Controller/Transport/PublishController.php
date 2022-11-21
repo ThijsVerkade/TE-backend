@@ -18,16 +18,15 @@ use App\Transport\Infrastructure\Persistence\TransportRepository;
 use App\Transport\Infrastructure\Persistence\VehicleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route(path: '/transport/publish', methods: ['post'])]
+#[Route(path: '/transports/publish', methods: ['post'])]
 class PublishController extends AbstractController
 {
     public function __construct(
-        private AddressRepository $addressRepository,
-        private TransportRepository $transportRepository,
-        private VehicleRepository $vehicleRepository,
+        private readonly AddressRepository $addressRepository,
+        private readonly TransportRepository $transportRepository,
+        private readonly VehicleRepository $vehicleRepository,
     )
     {
     }
@@ -81,6 +80,7 @@ class PublishController extends AbstractController
 
         $transport = $publishCommandHandler->handle(new PublishCommand(
             $request->getRequest()->get('company_id'),
+            Status::from($request->getRequest()->get('status')),
             $vehicles
         ));
 

@@ -7,7 +7,7 @@ namespace App\Transport\Application;
 class UnpublishCommand
 {
     public function __construct(
-        public readonly int $transportId,
+        public readonly string $transportUuid,
     )
     {
     }

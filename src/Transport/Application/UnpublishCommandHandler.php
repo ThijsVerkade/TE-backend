@@ -6,6 +6,7 @@ namespace App\Transport\Application;
 
 use App\Transport\Domain\Enums\Status;
 use App\Transport\Domain\Repositories\ITransportRepository;
+use Ramsey\Uuid\Uuid;
 
 class UnpublishCommandHandler
 {
@@ -15,10 +16,10 @@ class UnpublishCommandHandler
     {
     }
 
-    public function __invoke(UnpublishCommand $command): void
+    public function handle(UnpublishCommand $command): void
     {
         $this->transportRepository->updateStatus(
-            $command->transportId,
+            Uuid::fromString($command->transportUuid),
             Status::OFFLINE
         );
     }

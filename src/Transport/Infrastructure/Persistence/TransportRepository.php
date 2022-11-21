@@ -10,6 +10,7 @@ use App\Transport\Domain\Repositories\ITransportRepository;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\UuidInterface;
 
 class TransportRepository extends ServiceEntityRepository implements ITransportRepository
 {
@@ -35,11 +36,11 @@ class TransportRepository extends ServiceEntityRepository implements ITransportR
         );
     }
 
-    public function updateStatus(int $id, Status $status): void
+    public function updateStatus(UuidInterface $uuid, Status $status): void
     {
-        $transport = $this->find($id);
+        $transport = $this->findOneBy(['uuid' => $uuid]);
 
-        $transport->setStatus($status);
+        $transport->setStatus($status->value);
 
         $this->getEntityManager()->flush();
     }
