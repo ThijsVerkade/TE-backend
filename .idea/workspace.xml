@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a08581c-61a8-46eb-b0ec-3e96310c5c25" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="2a08581c-61a8-46eb-b0ec-3e96310c5c25" name="Changes" comment="feat: Adding first ddd design">
+      <change afterPath="$PROJECT_DIR$/src/Controller/Transport/PublishController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Request/Transport/PublishRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/transport-exchange-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/transport-exchange-backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transport/Application/PublishCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transport/Application/PublishCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transport/Application/PublishCommandHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transport/Application/PublishCommandHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transport/Domain/Aggregates/TransportAggregate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transport/Domain/Aggregates/TransportAggregate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transport/Domain/Commands/CreateTransportCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transport/Domain/Commands/CreateTransportCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transport/Domain/Entities/Transport.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transport/Domain/Entities/Transport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transport/Domain/Entities/Vehicle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transport/Domain/Entities/Vehicle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transport/Domain/ValueObjects/Vehicle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transport/Domain/ValueObjects/Vehicle.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,12 +25,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="DONT_SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -111,6 +125,14 @@
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/vendor/digitalrevolution/symfony-validation-shorthand" />
+      <path value="$PROJECT_DIR$/vendor/digitalrevolution/symfony-request-validation" />
+      <path value="$PROJECT_DIR$/vendor/symfony-bundles/json-request-bundle" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
     </include_path>
   </component>
   <component name="ProjectId" id="2Fcna4DjKHo0PNvh1bnsN3l8yqp" />
@@ -128,11 +150,13 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/Thijs.Verkade/workspace/symfony/transport-exchange-backend&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -152,6 +176,9 @@
       <updated>1664800299540</updated>
       <workItem from="1664800300710" duration="1009000" />
       <workItem from="1664801589174" duration="411000" />
+      <workItem from="1668413068435" duration="14098000" />
+      <workItem from="1668583699135" duration="640000" />
+      <workItem from="1669027104726" duration="9398000" />
     </task>
     <servers />
   </component>
@@ -168,12 +195,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="com.github.lppedd.cc.CommitBuilderDialog">
-    <type>build</type>
-    <scope>init project</scope>
-    <footers>
-      <entry type="" value="" />
-    </footers>
   </component>
 </project>

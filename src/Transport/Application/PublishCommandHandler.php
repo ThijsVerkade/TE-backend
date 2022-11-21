@@ -8,6 +8,7 @@ use App\Transport\Domain\Aggregates\TransportAggregate;
 use App\Transport\Domain\Commands\CreateAddressCommand;
 use App\Transport\Domain\Commands\CreateTransportCommand;
 use App\Transport\Domain\Commands\CreateVehicleCommand;
+use App\Transport\Domain\Enums\Status;
 use App\Transport\Domain\Repositories\IAddressRepository;
 use App\Transport\Domain\Repositories\ITransportRepository;
 use App\Transport\Domain\Repositories\IVehicleRepository;
@@ -22,10 +23,11 @@ class PublishCommandHandler
     {
     }
 
-    public function __invoke(PublishCommand $command): TransportAggregate
+    public function handle(PublishCommand $command): TransportAggregate
     {
         $transport = $this->transportRepository->create(
             new CreateTransportCommand(
+                Status::PUBLISHED->value,
                 $command->companyId,
             ),
         );
@@ -59,7 +61,7 @@ class PublishCommandHandler
                 new CreateVehicleCommand(
                     transportId: $transport->id,
                     vehicleReferenceId: $vehicle->vehicleReferenceId,
-                    distanceAddress: $vehicle->distanceAddress,
+                    distanceAddress: 0,
                     status: $vehicle->status,
                     type: $vehicle->type,
                     closingDate: $vehicle->closingDate,
@@ -75,7 +77,7 @@ class PublishCommandHandler
         }
 
         return new TransportAggregate(
-            id: $transport->id,
+            uuid: $transport->uuid,
             vehicles: $vehicles,
         );
     }

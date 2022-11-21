@@ -7,6 +7,7 @@ namespace App\Transport\Domain\Commands;
 class CreateTransportCommand
 {
     public function __construct(
+        public readonly int $status,
         public readonly ?int $companyId,
     )
     {

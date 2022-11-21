@@ -12,7 +12,6 @@ class Vehicle
 {
     public function __construct(
         public readonly int $vehicleReferenceId,
-        public readonly int $distanceAddress,
         public readonly Status $status,
         public readonly VehicleType $type,
         public readonly ?\DateTimeImmutable $closingDate,

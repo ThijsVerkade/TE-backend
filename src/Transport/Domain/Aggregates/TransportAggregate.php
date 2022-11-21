@@ -9,11 +9,11 @@ use App\Transport\Domain\Entities\Vehicle;
 class TransportAggregate
 {
     /**
-     * @param iterable<Vehicle> $vehicles
+     * @param Vehicle[] $vehicles
      */
     public function __construct(
-        public readonly int $id,
-        public readonly iterable $vehicles,
+        public readonly string $uuid,
+        public readonly array $vehicles,
     )
     {
     }

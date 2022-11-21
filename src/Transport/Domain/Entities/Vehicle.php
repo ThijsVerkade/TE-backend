@@ -12,10 +12,10 @@ class Vehicle
 {
     public function __construct(
         public readonly int $id,
-        public readonly int $vehicleReferenceId,
+        public readonly string $uuid,
+        public readonly string $vehicleReferenceId,
         public readonly int $distanceAddress,
         public readonly Status $status,
-        public readonly VehicleType $type,
         public readonly ?\DateTimeImmutable $closingDate,
         public readonly Address $pickupAddress,
         public readonly Address $deliveryAddress,

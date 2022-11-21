@@ -9,11 +9,11 @@ use App\Transport\Domain\ValueObjects\Vehicle;
 class PublishCommand
 {
     /**
-     * @param iterable<Vehicle> $vehicles
+     * @param Vehicle[] $vehicles
      */
     public function __construct(
         public readonly ?int $companyId,
-        public readonly iterable $vehicles,
+        public readonly array $vehicles,
     )
     {
     }
